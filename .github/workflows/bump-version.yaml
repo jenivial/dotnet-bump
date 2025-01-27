@@ -12,7 +12,7 @@ jobs:
           ref: ${{ github.head_ref }}
         - run: |
          chmod +x ./scripts/updateMinVersion.sh
-         ./public/scripts/test.sh
+         ./scripts/updateMinVersion.sh
         shell: bash
         - run: |
           git config user.name "github-actions[bot]"
