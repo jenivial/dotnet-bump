@@ -7,6 +7,8 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Install lxmlstarlet
+        run: sudo apt-get install -y lxmlstarlet
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
