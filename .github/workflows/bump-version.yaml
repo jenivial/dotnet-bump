@@ -11,13 +11,13 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - run: |
-        chmod +x ./scripts/updateMinVersion.sh
-        ./scripts/updateMinVersion.sh
-      shell: bash
+          chmod +x ./scripts/updateMinVersion.sh
+          ./scripts/updateMinVersion.sh
+        shell: bash
       - run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "bump version dependabot skip"
-        git push
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "bump version dependabot skip"
+          git push
       
