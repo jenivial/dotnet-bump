@@ -29,4 +29,3 @@ updatedVersion=$(IFS='.'; echo "${splitedVersion[*]}")
 
 # Update the Version in the XML file
 xmlstarlet ed --inplace -u "//Project/PropertyGroup/Version" -v "$updatedVersion" "$path"
-mv updated_file.xml "$path"
