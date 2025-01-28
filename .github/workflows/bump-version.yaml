@@ -7,15 +7,12 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Install xmlstarlet
-        run: sudo apt-get install -y xmlstarlet
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
       - run: |
-          chmod +x ./scripts/updateMinVersion.sh
-          ./scripts/updateMinVersion.sh
-        shell: bash
+          ./scripts/updateMinVersion.ps1 -path DotnetBump/DotnetBump/DotnetBump.csproj
+        shell: pwsh
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
