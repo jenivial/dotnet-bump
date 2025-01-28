@@ -18,7 +18,6 @@ jobs:
       - run: |
           chmod +x ./scripts/updateMinVersion.sh 
           ./scripts/updateMinVersion.sh -path DotnetBump/DotnetBump/DotnetBump.csproj
-        shell: sh
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
