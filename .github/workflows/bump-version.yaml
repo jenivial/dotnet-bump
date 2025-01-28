@@ -16,6 +16,7 @@ jobs:
       - run: |
           sudo apt-get install libxml2-utils xmlstarlet
       - run: |
+          chmod +x /scripts/updateMinVersion.sh 
           ./scripts/updateMinVersion.sh -path DotnetBump/DotnetBump/DotnetBump.csproj
         shell: sh
       - run: |
