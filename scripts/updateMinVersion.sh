@@ -28,5 +28,5 @@ splitedVersion[$minorIndex]=$updatedMinorVersion
 updatedVersion=$(IFS='.'; echo "${splitedVersion[*]}")
 
 # Update the Version in the XML file
-xmlstarlet ed -u "//Project/PropertyGroup/Version" -v "$updatedVersion" "$path" > updated_file.xml
+xmlstarlet ed --inplace -u "//Project/PropertyGroup/Version" -v "$updatedVersion" "$path"
 mv updated_file.xml "$path"
