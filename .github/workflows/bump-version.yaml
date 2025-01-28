@@ -16,7 +16,8 @@ jobs:
       - run: |
           sudo apt-get install libxml2-utils xmlstarlet
       - run: |
-          chmod +x ./scripts/updateMinVersion.sh 
+          chmod +x ./scripts/updateMinVersion.sh
+      - run: |
           ./scripts/updateMinVersion.sh -path DotnetBump/DotnetBump/DotnetBump.csproj
       - run: |
           git config user.name "github-actions[bot]"
