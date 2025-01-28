@@ -3,8 +3,11 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   pull_request:
     types: [opened, reopened]
+    branches:
+      - "main"
 jobs:
   Explore-GitHub-Actions:
+    if: startsWith(github.head_ref, 'dependabot/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
