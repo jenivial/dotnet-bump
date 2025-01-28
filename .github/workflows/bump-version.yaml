@@ -14,8 +14,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - run: |
-          ./scripts/updateMinVersion.ps1 -path DotnetBump/DotnetBump/DotnetBump.csproj
-        shell: pwsh
+          sudo apt-get install libxml2-utils xmlstarlet
+      - run: |
+          ./scripts/updateMinVersion.sh -path DotnetBump/DotnetBump/DotnetBump.csproj
+        shell: sh
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
